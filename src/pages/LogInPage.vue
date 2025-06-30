@@ -1,5 +1,5 @@
 <script setup>
-  import LogIn from "@/components/LogIn.vue";
+  import LogIn from "@/components/LogInForm.vue";
 </script>
 <template>
   <div class="container">
@@ -27,6 +27,8 @@
           this.$cookies.set("email",form.email)
           this.$cookies.set("password",form.password)
           this.$router.push("/")
+        }else{
+          alert("no!")
         }
       }
     }
