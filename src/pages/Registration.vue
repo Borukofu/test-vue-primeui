@@ -1,3 +1,6 @@
+<script setup>
+  import FormInput from '@/components/FormInput.vue';
+</script>
 <template>
   <div class="container">
     <form class="RegForm" @submit.prevent>
