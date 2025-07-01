@@ -18,6 +18,7 @@
         v-model.trim="UserPassword"  
         :HelpMessage="'Enter your Password'" 
         :Label="'Password'" 
+        :Type="'Password'"
         :isInvalid="isInvalidPassword"
         />
 

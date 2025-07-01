@@ -6,6 +6,7 @@
             :invalid="isInvalid" 
             inputId="onLabel"
             v-model.trim="value"
+            :type="Type"
         />
         <label for="onLabel">{{Label}}</label>
     </FloatLabel>
@@ -23,6 +24,7 @@
             }
         },
         props:{
+            Type:{default:"text",type:String},
             isInvalid:{required:true},
             Label:{type:String,required:true},
             HelpMessage:{type:String,required:true}
