@@ -4,11 +4,11 @@ import App from './App.vue'
 import PrimeVue from "primevue/config"
 import Aura from '@primeuix/themes/aura';
 import Components from "@/components/UI"
+import { Tooltip } from 'primevue';
 
 import "./style.css"
 
 import router from './router/router';
-
 import VueCookies from "vue3-cookies";
 
 const app = createApp(App);
@@ -28,6 +28,7 @@ app.use(PrimeVue,{
         }
     }
 })
+app.directive('tooltip',Tooltip)
 app.use(VueCookies, {
     expireTimes: "30d",
     path: "/",
