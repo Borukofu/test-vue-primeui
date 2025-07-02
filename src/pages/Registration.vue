@@ -45,7 +45,11 @@
   </div>
 </template>
 <script>
+    import FormInput from '@/components/FormInput.vue';
     export default {
+        components:{
+            FormInput
+        },
         mounted(){
           if(this.$cookies.get("auth")==="true"){
             this.$router.push("/")
@@ -54,6 +58,7 @@
         },
         data(){
             return{
+                isInvalidUserName:false,
                 isInvalidEmail:false,
                 isInvalidPassword:false,
                 isInvalidConfirmPassword:false,
@@ -69,11 +74,14 @@
                 // ULTRA REGISTRATIYA  //
             },
             Submit(){
-                if(this.UserPassword.length>8&&this.UserEmail.search(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)===0&&this.UserPassword===this.UserConfirmPassword){
+                if(this.UserPassword.length>8&&this.UserEmail.search(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)===0&&this.UserPassword===this.UserConfirmPassword&&this.UserName!==""){
                     this.registration({password:this.UserPassword,email:this.UserEmail})                    
                 }
                 if(!(this.UserPassword.length>8)){
                     this.isInvalidPassword = true;
+                }
+                if(this.UserName===""){
+                    this.isInvalidUserName = true;
                 }
                 if(!(this.UserConfirmPassword.length>8)||(this.UserPassword!==this.UserConfirmPassword)){
                     this.isInvalidConfirmPassword = true;
@@ -84,6 +92,13 @@
             }, 
         },
         watch:{
+            UserName(newValue){
+                if(newValue!==""){
+                    this.isInvalidUserName = false;
+                }else{
+                    this.isInvalidUserName = true;
+                }
+            },
             UserEmail(newEmail){
                 if(newEmail.search(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)===0){
                     this.isInvalidEmail = false;
