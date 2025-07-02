@@ -26,7 +26,7 @@ import IconInput from '@/components/IconInput.vue';
                     {
                         label: "Home",
                         icon: 'pi pi-home',
-                        command:()=>{alert("Coming soon...")}
+                        command:()=>{this.$router.push("/")}
                     },
                     {
                         label: "Setting",

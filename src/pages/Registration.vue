@@ -78,7 +78,7 @@
             },
             Submit(){
                 if(this.UserPassword.length>8&&this.UserEmail.search(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)===0&&this.UserPassword===this.UserConfirmPassword&&this.UserName!==""){
-                    this.registration({password:this.UserPassword,email:this.UserEmail})                    
+                    this.registration({password:this.UserPassword,email:this.UserEmail,username:this.UserName})                    
                 }
                 if(!(this.UserPassword.length>8)){
                     this.isInvalidPassword = true;
