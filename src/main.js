@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 import PrimeVue from "primevue/config"
-import Aura from '@primeuix/themes/aura';
+import Aura from '@primeuix/themes/material';
 import Components from "@/components/UI"
 import { Tooltip } from 'primevue';
 
