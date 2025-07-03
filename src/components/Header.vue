@@ -6,7 +6,7 @@
         <template #end>
             <div class="end-template">
                 <IconInput v-model="searchString" :Icon="'pi pi-search'" :Label="'Search'"></IconInput>
-                <Avatar image="https://primefaces.org/cdn/primevue/images/organization/walter.jpg"/>
+                <Avatar style="margin-right: 15px;" image="https://primefaces.org/cdn/primevue/images/organization/walter.jpg"/>
             </div>
         </template>
     </Menubar>

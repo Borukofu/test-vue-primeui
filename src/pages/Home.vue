@@ -2,30 +2,17 @@
     <div class="container">
         <Header style="margin-bottom: 20px;" v-model:searchString="searchString"/>
         <div class="content">
-            <Panel style="max-width: 900px;min-width: 380px;">
-                <template #header>
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <Avatar style="margin-right: 15px;" image="https://primefaces.org/cdn/primevue/images/organization/walter.jpg" />
-                        <span>{{this.$cookies.get("email")}}</span>
-                    </div>
-                </template>
-                <template #footer>
-                    <div class="end">
-                        <Button icon="pi pi-trash"></Button>
-                    </div>
-                </template>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla neque harum quasi consequatur quos eos, impedit minus, dolorem eveniet assumenda unde, itaque quae soluta illo? Quidem qui iste unde facere!
-                </p>
-            </Panel>
+            <PostList/>
         </div>
     </div>
 </template>
 <script>
 import Header from '@/components/Header.vue';
+import PostList from '@/components/PostList.vue';
 export default{
     components:{
-        Header
+        Header,
+        PostList
     },
     mounted(){
         if(this.$cookies.get("auth")==="true"){
@@ -38,17 +25,11 @@ export default{
     data() {
         return {
             searchString:"",
-           
         }
     },
 }
 </script>
 <style scoped>
-    .end{
-        display: flex;
-        justify-content: end;
-        align-items: center;
-    }
     .content{
         padding-right: 15px;
         padding-left: 15px;
