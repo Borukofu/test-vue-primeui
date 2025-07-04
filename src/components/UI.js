@@ -1,4 +1,4 @@
-import { Button,InputText,FloatLabel,Password,Panel, Menubar, IconField, InputIcon, Avatar, Tabs, TabList, Tab, ScrollPanel, ScrollTop} from "primevue";
+import { Button,InputText,FloatLabel,Password,Panel, Menubar, IconField, InputIcon, Avatar, Tabs, TabList, Tab, ScrollPanel, ScrollTop, Fieldset} from "primevue";
 
 export default [
     Button,
@@ -14,5 +14,6 @@ export default [
     TabList,
     Tab,
     ScrollPanel,
-    ScrollTop
+    ScrollTop,
+    Fieldset
 ]

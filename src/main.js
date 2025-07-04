@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 import PrimeVue from "primevue/config"
-import Aura from '@primeuix/themes/material';
+import Preset from '@primeuix/themes/aura';
 import Components from "@/components/UI"
 import { Tooltip } from 'primevue';
 
@@ -14,13 +14,12 @@ import VueCookies from "vue3-cookies";
 const app = createApp(App);
 
 Components.forEach(component =>{
-    app.component(component.name,component)
+    app.component(component.name,component);
 })
-
 
 app.use(PrimeVue,{
     theme:{
-        preset: Aura,
+        preset: Preset,
         options: {
             prefix: 'p',
             darkModeSelector: 'system',

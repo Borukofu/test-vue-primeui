@@ -1,24 +1,25 @@
 <template>
-    <div class="list">
-        <ScrollPanel>
-            <Panel v-for="post in posts" :key="post.id" style="max-width: 900px;min-width: 380px;margin-top: 15px;">
-                <template #header>
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <Avatar style="margin-right: 15px;" image="https://primefaces.org/cdn/primevue/images/organization/walter.jpg" />
-                        <span>{{post.title}}</span>
-                    </div>
-                </template>
-                <template #footer>
-                    <div class="end">
-                        <Button icon="pi pi-trash" @click="(ev)=>{alert('Coming soon...')}"></Button>
-                    </div>
-                </template>
-                <p>
-                    {{ post.body }}
-                </p>
-            </Panel>
-            <ScrollTop target="parent" :threshold="100" icon="pi pi-arrow-up" :buttonProps="{ severity: 'contrast', raised: true, rounded: true }" />
-        </ScrollPanel>
+    <div class=" w-full flex flex-col justify-center items-center   ">
+        <Panel class="mb-4 max-w-3xl" v-for="post in posts" :key="post.id">
+            <template #header>
+                <div class="flex justify-center items-center">
+                    <Avatar class="mr-4" image="https://primefaces.org/cdn/primevue/images/organization/walter.jpg" />
+                    <span>
+                        <strong>
+                            {{post.title}}
+                        </strong>
+                    </span>
+                </div>
+            </template>
+            <template #footer>
+                <div class="flex justify-end items-center">
+                    <Button icon="pi pi-trash" @click="PostDelete(post.id)"></Button>
+                </div>
+            </template>
+            <p>
+                {{ post.body }}
+            </p>
+        </Panel>
     </div>
 </template>
 <script>
@@ -30,19 +31,24 @@
             }
         },
         mounted(){
-            this.getPosts()
+            this.GetPosts()
         },
         methods:{
-            async getPosts(){
-                this.posts = (await axios.get("https://jsonplaceholder.typicode.com/posts?_limit=10")).data
+            PostDelete(id){
+                console.log(id);
+                for(let post of this.posts){
+                    if(post.id===id){
+                        this.posts = this.posts.filter(post => post.id !== id)
+                    }
+                };
+            },
+            async GetPosts(){
+                try{
+                    this.posts = (await axios.get("https://jsonplaceholder.typicode.com/posts?_limit=10")).data
+                }catch (er){
+                    console.error(er);
+                };
             }   
         }
     }
 </script>
-<style>
-    .end{
-        display: flex;
-        justify-content: end;
-        align-items: center;
-    }
-</style>

@@ -2,49 +2,53 @@
   import FormInput from '@/components/FormInput.vue';
 </script>
 <template>
-  <div class="container">
-    <form class="RegForm" @submit.prevent>
-        <h1>Register now!</h1>
-        <FormInput 
-        class="MarginTop15" 
-        v-model.trim="UserName"  
-        :HelpMessage="'Enter your Username'" 
-        :Label="'Username'" 
-        :isInvalid="isInvalidUserName"
-        />
-
-        <FormInput 
-        class="MarginTop15" 
-        v-model.trim="UserEmail"  
-        :HelpMessage="'Enter your Email'" 
-        :Label="'Email'" 
-        :isInvalid="isInvalidEmail"
-        />
-
-        <FormInput 
-        class="MarginTop15" 
-        v-model.trim="UserPassword"  
-        :HelpMessage="'Enter your Password'" 
-        :Label="'Password'" 
-        :Type="'Password'"
-        :isInvalid="isInvalidPassword"
-        />
-
-        <FormInput 
-        class="MarginTop15" 
-        v-model.trim="UserConfirmPassword"  
-        :HelpMessage="'Enter your Password again!'" 
-        :Label="'Confirm Password'" 
-        :Type="'Password'"
-        :isInvalid="isInvalidConfirmPassword"
-        />
-
-
-        <div class="buttons">
-            <Button class="MarginTop15" @click="Submit" label="Log in"/>   
-            <Button class="MarginTop15" @click="$router.push('/login')" label="have an account" severity="secondary" variant="text"/>   
-        </div>
-    </form>
+  <div class="flex justify-center items-center h-lvh">
+    <Panel>
+        <template #header>
+            <h1 class=" text-3xl">Register now!</h1>
+        </template>
+        <form @submit.prevent>
+            <FormInput 
+            v-model.trim="UserName"  
+            class="mb-4"
+            :HelpMessage="'Enter your Username'" 
+            :Label="'Username'" 
+            :isInvalid="isInvalidUserName"
+            />
+    
+            <FormInput 
+            v-model.trim="UserEmail"
+            class="mb-4"
+            :HelpMessage="'Enter your Email'" 
+            :Label="'Email'" 
+            :isInvalid="isInvalidEmail"
+            />
+    
+            <FormInput 
+            v-model.trim="UserPassword"
+            class="mb-4"
+            :HelpMessage="'Enter your Password'" 
+            :Label="'Password'" 
+            :Type="'Password'"
+            :isInvalid="isInvalidPassword"
+            />
+    
+            <FormInput 
+            v-model.trim="UserConfirmPassword"
+            class="mb-4"
+            :HelpMessage="'Enter your Password again!'" 
+            :Label="'Confirm Password'" 
+            :Type="'Password'"
+            :isInvalid="isInvalidConfirmPassword"
+            />
+    
+    
+            <div class="flex items-center">
+                <Button @click="Submit" label="Log in"/>   
+                <Button @click="$router.push('/login')" label="have an account" severity="secondary" variant="text"/>   
+            </div>
+        </form>
+    </Panel>
   </div>
 </template>
 <script>
@@ -127,33 +131,3 @@
     }
     
 </script>
-<style scoped>
-  .MarginTop15{
-    margin-top: 15px;
-  }
-  .RegForm{
-    padding: 20px;
-    border-radius: 4%;
-    border: 1px solid var(--p-content-border-color);
-    background-color: var(--p-content-background);
-    display: flex;
-    flex-direction: column;
-  }
-  .buttons{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .container{
-    height: 97vh;
-    width: 97vw;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-</style>

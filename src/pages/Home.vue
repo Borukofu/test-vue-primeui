@@ -1,9 +1,7 @@
 <template>
-    <div class="container">
-        <Header style="margin-bottom: 20px;" v-model:searchString="searchString"/>
-        <div class="content">
-            <PostList/>
-        </div>
+    <div>
+        <Header class="mb-4" v-model:searchString="searchString"/>
+        <PostList/>
     </div>
 </template>
 <script>
@@ -29,21 +27,3 @@ export default{
     },
 }
 </script>
-<style scoped>
-    .content{
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-    .container{
-        height: 100vh;
-        width: 100vw;
-        top: 0px;
-        bottom: 0px;
-        right: 0px;
-        left: 0px;
-        display: flex;
-        flex-direction: column;
-        /* justify-content: center; */
-        align-items: center;
-    }
-</style>
