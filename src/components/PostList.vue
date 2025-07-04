@@ -1,25 +1,27 @@
 <template>
     <div class=" w-full flex flex-col justify-center items-center   ">
-        <Panel class="mb-4 max-w-3xl" v-for="post in posts" :key="post.id">
-            <template #header>
-                <div class="flex justify-center items-center">
-                    <Avatar class="mr-4" image="https://primefaces.org/cdn/primevue/images/organization/walter.jpg" />
-                    <span>
-                        <strong>
-                            {{post.title}}
-                        </strong>
-                    </span>
-                </div>
-            </template>
-            <template #footer>
-                <div class="flex justify-end items-center">
-                    <Button icon="pi pi-trash" @click="PostDelete(post.id)"></Button>
-                </div>
-            </template>
-            <p>
-                {{ post.body }}
-            </p>
-        </Panel>
+        <TransitionGroup name="postsList">
+            <Panel class="mb-4 max-w-3xl" v-for="post in posts" :key="post.id">
+                <template #header>
+                    <div class="flex justify-center items-center">
+                        <Avatar class="mr-4" image="https://primefaces.org/cdn/primevue/images/organization/walter.jpg" />
+                        <span>
+                            <strong>
+                                {{post.title}}
+                            </strong>
+                        </span>
+                    </div>
+                </template>
+                <template #footer>
+                    <div class="flex justify-end items-center">
+                        <Button icon="pi pi-trash" @click="PostDelete(post.id)"></Button>
+                    </div>
+                </template>
+                <p>
+                    {{ post.body }}
+                </p>
+            </Panel>
+        </TransitionGroup>
     </div>
 </template>
 <script>
