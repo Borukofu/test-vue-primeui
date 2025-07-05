@@ -1,5 +1,5 @@
 <template>
-    <Dialog modal>
+    <Dialog class="max-w-3xl" modal>
         <template #header>
             <h2 class="mr-4">
                 <strong>

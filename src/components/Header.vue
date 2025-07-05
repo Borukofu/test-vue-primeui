@@ -6,6 +6,7 @@
             </template>
             <template #end>
                 <div class="flex items-center">
+                    <Select v-model="selectFilterItem" :options="selectFilter" optionLabel="name" placeholder="Selected Filter" class="mr-4"></Select>
                     <IconInput v-model="searchString" :Icon="'pi pi-search'" :Label="'Search'"></IconInput>
                     <Avatar class="ml-3 mr-3" image="https://primefaces.org/cdn/primevue/images/organization/walter.jpg"/>
                 </div>
@@ -21,8 +22,12 @@ import IconInput from '@/components/IconInput.vue';
         components:{
             Logo,IconInput
         },
+        props:{
+            selectFilter:{type:Array,required:true}
+        },
         data(){
             return{
+                selectFilterItem:{name:"Title",code:"title"},
                 searchString:"",
                 items:[
                     {
@@ -57,6 +62,9 @@ import IconInput from '@/components/IconInput.vue';
         watch:{
             searchString(newValue){
                 this.$emit("update:searchString",newValue)
+            },
+            selectFilterItem(newValue){
+                this.$emit("update:selectFilterItem",newValue.code)
             }
         },
         methods:{
