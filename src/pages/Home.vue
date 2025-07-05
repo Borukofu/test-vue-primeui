@@ -141,6 +141,7 @@ export default{
                 id:Date.now()
             })
             this.posts.reverse()
+            this.sortPosts(this.searchString)
         },
         PostDelete(id){
             for(let post of this.posts){
