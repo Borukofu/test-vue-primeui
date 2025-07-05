@@ -10,6 +10,7 @@ import "./style.css"
 
 import router from './router/router';
 import VueCookies from "vue3-cookies";
+import ToastService from 'primevue/toastservice';
 
 const app = createApp(App);
 
@@ -17,6 +18,7 @@ Components.forEach(component =>{
     app.component(component.name,component);
 })
 
+app.use(ToastService)
 app.use(PrimeVue,{
     theme:{
         preset: Preset,

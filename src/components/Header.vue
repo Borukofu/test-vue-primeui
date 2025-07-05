@@ -27,12 +27,17 @@ import IconInput from '@/components/IconInput.vue';
                 items:[
                     {
                         label: "Dashboard",
-                        icon: 'pi pi-home',
+                        icon: "pi pi-home",
                         command:()=>{this.$router.push("/")}
                     },
                     {
+                        label: "Create Post",
+                        icon: "pi pi-envelope",
+                        command:()=>{this.$emit("CreatePost",true)}
+                    },
+                    {
                         label: "Setting",
-                        icon:"pi pi-cog",
+                        icon: "pi pi-cog",
                         items:[
                             {
                                 label:"Account",

@@ -1,3 +1,4 @@
+import ViewPost from "@/components/ViewPost.vue";
 import Home from "@/pages/Home.vue"
 import LogInPage from "@/pages/LogInPage.vue"
 import Registration from "@/pages/Registration.vue";
@@ -16,7 +17,7 @@ const routes = [
     {
         path:"/registration",
         component: Registration,
-    }
+    },
 ];
 
 const router = createRouter({

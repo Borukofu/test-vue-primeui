@@ -14,10 +14,11 @@
                 </template>
                 <template #footer>
                     <div class="flex justify-end items-center">
-                        <Button icon="pi pi-trash" @click="PostDelete(post.id)"></Button>
+                        <Button class="mr-2" icon="pi pi-eye" @click="$emit('OpenPost',post.id)"></Button>
+                        <Button icon="pi pi-trash" @click="$emit('PostDelete',post.id)"></Button>
                     </div>
                 </template>
-                <p>
+                <p class="overflow-y-auto">
                     {{ post.body }}
                 </p>
             </Panel>
@@ -25,32 +26,14 @@
     </div>
 </template>
 <script>
-    import axios from 'axios';
     export default{
-        data(){
-            return{
-                posts:[]
-            }
-        },
-        mounted(){
-            this.GetPosts()
+        props:{
+            posts:{type:Array,required:true}
         },
         methods:{
-            PostDelete(id){
-                console.log(id);
-                for(let post of this.posts){
-                    if(post.id===id){
-                        this.posts = this.posts.filter(post => post.id !== id)
-                    }
-                };
-            },
-            async GetPosts(){
-                try{
-                    this.posts = (await axios.get("https://jsonplaceholder.typicode.com/posts?_limit=10")).data
-                }catch (er){
-                    console.error(er);
-                };
-            }   
+            // OpenPost(id){
+            //     this.$router.push(`/posts/${id}`)
+            // },
         }
     }
 </script>
