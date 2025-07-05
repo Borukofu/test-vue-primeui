@@ -47,7 +47,7 @@ import IconInput from '@/components/IconInput.vue';
                             {
                                 label:"Account",
                                 icon:"pi pi-user",
-                                command:()=>{alert("Coming soon...")}
+                                command:()=>{alert("I don't know what to add...")}
                             },
                             {
                                 label:"Sign out",
