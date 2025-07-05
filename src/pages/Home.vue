@@ -3,7 +3,7 @@
         <Header v-model:selectFilterItem="selectFilterItem" :selectFilter="selectFilter" @CreatePost="()=>{visibleDialogCreatePost=true}" class="mb-4" v-model:searchString="searchString"/>
         <CreatePost @CreatePost="CreatePost" v-model:visible="visibleDialogCreatePost"></CreatePost>
         <ViewPost :post="viewPostItem" v-if="viewPost" v-model:visible="viewPost" ></ViewPost>
-        <div v-if="(posts.length===0)&&PostListLoading===false" class="flex w-lvw justify-center">
+        <div v-if="(posts.length===0)" class="flex w-lvw justify-center">
             <h2 class=" text-2xl">Post list is Empty!</h2>
         </div>
         <PostList @OpenPost="OpenPost" @PostDelete="PostDelete" :posts="PostsList()"/>
