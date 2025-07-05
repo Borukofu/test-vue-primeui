@@ -43,8 +43,6 @@ export default{
     data() {
         return {
             posts:[
-                {id:1,userid:1,title:"tested title post",body:"is legal body 100 % "},
-                {id:2,userid:2,title:"Lorem? 100))",body:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium non hic, magni perspiciatis ab laboriosam, mollitia impedit optio earum debitis iure maxime blanditiis dignissimos rem nulla, natus perferendis voluptatem harum minima possimus sit fuga. Iusto praesentium eius maxime corrupti nemo voluptas dolor eligendi cupiditate! Voluptate neque harum inventore doloremque cupiditate mollitia earum nemo accusamus repellendus voluptatem nobis unde quidem quia ad porro, dolor dolores adipisci labore sapiente assumenda molestiae possimus a. Odio illum error quisquam labore dolorum architecto quia velit nostrum necessitatibus? Aperiam officia dolorum deleniti sequi, libero vero harum aspernatur quos corporis deserunt commodi dolores dignissimos, tempora totam fuga!"}
             ],
             filteredPosts:[],
             searchString:"",
