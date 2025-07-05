@@ -3,7 +3,7 @@ import App from './App.vue'
 
 import PrimeVue from "primevue/config"
 import Preset from '@primeuix/themes/aura';
-import Components from "@/components/UI"
+import Components from "@/components/utils/UI"
 import { Tooltip } from 'primevue';
 
 import "./style.css"
