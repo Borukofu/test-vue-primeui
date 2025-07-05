@@ -10,10 +10,10 @@
     </div>
 </template>
 <script>
-import CreatePost from '@/components/CreatePost.vue';
-import Header from '@/components/Header.vue';
-import PostList from '@/components/PostList.vue';
-import ViewPost from '@/components/ViewPost.vue';
+import CreatePost from '@/components/posts/CreatePost.vue';
+import Header from '@/components/global/Header.vue';
+import PostList from '@/components/posts/PostList.vue';
+import ViewPost from '@/components/posts/ViewPost.vue';
 export default{
     components:{
         Header,

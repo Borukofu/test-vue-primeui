@@ -1,5 +1,5 @@
 <script setup>
-  import FormInput from '@/components/FormInput.vue';
+  import FormInput from '@/components/inputs/FormInput.vue';
 </script>
 <template>
   <div class="flex justify-center items-center h-lvh">
@@ -52,7 +52,7 @@
   </div>
 </template>
 <script>
-    import FormInput from '@/components/FormInput.vue';
+    import FormInput from '@/components/inputs/FormInput.vue';
     export default {
         components:{
             FormInput

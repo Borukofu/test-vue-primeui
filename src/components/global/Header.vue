@@ -15,8 +15,8 @@
     </div>
 </template>
 <script>
-import Logo from '@/components/Logo.vue';
-import IconInput from '@/components/IconInput.vue';
+import Logo from '@/components/global/Logo.vue';
+import IconInput from '@/components/inputs/IconInput.vue';
 
     export default {
         components:{
